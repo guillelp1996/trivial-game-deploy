@@ -8,7 +8,13 @@ var questions;
 
 /*************************************  Buttons Event Listeners Beginning ***************************************/
 
-$("#user_page_nextBtn").click(changeScreen);
+$("#user_page_nextBtn").click(function(){
+    if($("#userName").val() == ""){
+        $("#userName").css("border","1px solid red")
+    }else{
+        changeScreen()
+    }
+});
 
 $("#category_page_nextBtn").click(changeScreen);
 
