@@ -29,18 +29,47 @@ function saveLocalStorage(obj) {
 
 $("#user_page_nextBtn").click(saveUser)
 $("#user_page_quickPlay").click(saveUser)
-function saveUser(){
+function saveUser() {
     let name = $("#userName").val()
-    if (name == ""){
+    if (name == "") {
         // console.log(UserObj)
         saveLocalStorage(UserObj)
-    }else{
+    } else {
         UserObj.name = name
         saveLocalStorage(UserObj)
     }
 }
 
+/**
+ * function countdown
+ */
 
+function countdown(level) {
+    var timeleft;
+
+    switch(level){
+        case "easy":
+            timeleft = 120
+            break;
+        case "medium":
+            timeleft = 60
+            break;
+        case "hard":
+            timeleft = 30
+            break;
+        default:
+            timeleft = 60
+    }
+    var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finished";
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft + " seconds";
+        }
+        timeleft -= 1;
+    }, 1000);
+}
 
 
 

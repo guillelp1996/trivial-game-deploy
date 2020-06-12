@@ -20,6 +20,7 @@ $("#difficulty_page_nextBtn").click(changeScreen);
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
     console.log(difficulty)
+    
 });
 
 // Changing screens for user navigation
@@ -52,5 +53,6 @@ function requestAPI() {
         }
     }).then((response) => {
         questions = response.data.results;
+        
     });
 }
