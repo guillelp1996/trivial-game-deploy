@@ -1,6 +1,6 @@
 /*************************************  Global Variables Beginning ***************************************/
 
-var category;
+var category = undefined;
 var difficulty;
 var questions;
 var score = 0;
@@ -18,7 +18,13 @@ $("#user_page_nextBtn").click(function(){
     }
 });
 
-$("#category_page_nextBtn").click(changeScreen);
+$("#category_page_nextBtn").click(function(){
+    if(category == undefined) {
+        $("#category_page").append("<p>Please select a category</p>")
+    } else {
+        changeScreen();
+    }
+});
 
 // Selecting a category for trivia and saving on variable "category"
 $(".category_page_selectBtn").click( () => {
@@ -203,6 +209,7 @@ function resetGame(){
     $("input[type=text]").val("");
     $("select").val("");
     questions = [];
+    category = undefined;
     score = 0;
     lifes = 3;
     isGameOver= false
