@@ -3,16 +3,18 @@
 var category;
 var difficulty;
 var questions;
+var score;
+var lifes = 3;
 
 /*************************************  Global Variables Ending *************************************************/
 
 /*************************************  Buttons Event Listeners Beginning ***************************************/
 
 $("#user_page_nextBtn").click(function(){
-    if($("#userName").val() == "" || $("#userName").val().includes(" ") ){
+    if($("#userName").val() == "" || $("#userName").val().includes(" ")){
         $("#userName").css("border","1px solid red")
     }else{
-        changeScreen()
+        changeScreen();
     }
 });
 
@@ -33,7 +35,7 @@ $("#difficulty_page_nextBtn").click( () => {
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
     console.log(difficulty)
-    
+
 });
 
 /*************************************  Buttons Event Listeners Ending ***************************************/
@@ -49,7 +51,7 @@ function changeScreen() {
     } else if($("#dificulty_page").is(":visible")) {
         $("#dificulty_page").slideToggle("slow");
         $("#question_page").slideToggle("slow");
-    } else if($("#question_page").is(":visible") && isGameOver) { //check if game is over to change to GameOver screen
+    } else if($("#question_page").is(":visible")) {
         $("#question_page").slideToggle("slow");
         $("#gameover_page").slideToggle("slow");
     } else if($("#gameover_page").is(":visible")) {
@@ -77,13 +79,38 @@ function printQuestion() {
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
+    // Updating question's title
     $("#question").text(questions[0].question);
+    // Appending all the answers
     $("#answers").append($("<ul>").append(
-        $("<li>").text(answers[0]),
-        $("<li>").text(answers[1]),
-        $("<li>").text(answers[2]),
-        $("<li>").text(answers[3])
+        $("<li>").text(answers[0]).click(checkAnswer),
+        $("<li>").text(answers[1]).click(checkAnswer),
+        $("<li>").text(answers[2]).click(checkAnswer),
+        $("<li>").text(answers[3]).click(checkAnswer)
     ));
+    // Setting data="correct" for the correct answer
     $("li:contains("+questions[0].correct_answer+")").data("correct",true);
+    // Excluding the printed question from the "questions" array
     questions.shift();
+}
+
+function checkAnswer() {
+    if ($(event.target).data("correct") == true) {
+        console.log("Correct Answer!!!");
+        printQuestion();
+    } else {
+        console.log("Incorrect Answer!!!");
+        lifes--;
+        checkGameOver();
+        if (!isGameOver) {
+            printQuestion();
+        }
+    }
+}
+
+function checkGameOver() {
+    if (lifes == 0) {
+        isGameOver = true;
+        changeScreen();
+    }
 }
