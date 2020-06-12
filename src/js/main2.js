@@ -42,6 +42,11 @@ $("#difficulty_page_select").change( () => {
 
 });
 
+$("#btn_tryAgain").click(function(){
+    resetGame()
+    changeScreen()
+})
+
 /*************************************  Buttons Event Listeners Ending ***************************************/
 
 // Changing screens for user navigation
@@ -136,4 +141,10 @@ function checkGameOver() {
 
 function showRanking() {
     $("#player_score").text("Your Score: "+score);
+}
+function resetGame(){
+    changeScreen()
+    $("input[type=text]").val("");
+    $("select").val("");
+    score = 0;
 }
