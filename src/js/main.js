@@ -27,18 +27,8 @@ function saveLocalStorage(obj) {
  *  save user name
  */
 
-$("#user_page_nextBtn").click(saveUser)
-$("#user_page_quickPlay").click(saveUser)
-function saveUser() {
-    let name = $("#userName").val()
-    if (name == "") {
-        // console.log(UserObj)
-        saveLocalStorage(UserObj)
-    } else {
-        UserObj.name = name
-        saveLocalStorage(UserObj)
-    }
-}
+$("#user_page_quickPlay").click($("#userName").val("Player"));
+
 
 /**
  * function countdown
