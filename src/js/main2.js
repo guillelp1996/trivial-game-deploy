@@ -143,7 +143,6 @@ function showRanking() {
     $("#player_score").text("Your Score: "+score);
 }
 function resetGame(){
-    changeScreen()
     $("input[type=text]").val("");
     $("select").val("");
     score = 0;
