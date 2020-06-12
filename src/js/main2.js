@@ -141,9 +141,9 @@ function checkGameOver() {
 function showRanking() {
     $("#player_score").text("Your Score: "+score);
 
-    let topEasy = ["-","-","-"];
-    let topMedium = ["-","-","-"];
-    let topHard = ["-","-","-"];
+    let topEasy = [];
+    let topMedium = [];
+    let topHard = [];
     let countEasy = 0;
     let countMedium = 0;
     let countHard = 0;
@@ -170,15 +170,23 @@ function showRanking() {
             }
         }
     }
-    $("rnk1E").text(topEasy[0].name);
-    $("rnk1M").text(topMedium[0].name);
-    $("rnk1H").text(topHard[0].name);
-    $("rnk2E").text(topEasy[1].name);
-    $("rnk2M").text(topMedium[1].name);
-    $("rnk2H").text(topHard[1].name);
-    $("rnk3E").text(topEasy[2].name);
-    $("rnk3M").text(topMedium[2].name);
-    $("rnk3H").text(topHard[2].name);
+    for (let i = 0; i < 3; i++) {
+        if (topEasy[i] != undefined) {
+            $("#rank"+i+"E").text(topEasy[i].name + " - Score: " + topEasy[i].score);
+        } else {
+            $("#rank"+i+"E").text("-");
+        }
+        if (topMedium[i] != undefined) {
+            $("#rank"+i+"M").text(topMedium[i].name + " - Score: " + topMedium[i].score);
+        } else {
+            $("#rank"+i+"M").text("-");
+        }
+        if (topHard[i] != undefined) {
+            $("#rank"+i+"H").text(topHard[i].name + " - Score: " + topHard[i].score);
+        } else {
+            $("#rank"+i+"H").text("-");
+        }
+    }
 
 }
 
