@@ -132,7 +132,6 @@ function checkGameOver() {
     if (lifes == 0) {
         isGameOver = true;
         let user = {"name":$("#userName").val(), "score":score, "difficulty":difficulty};
-        console.log(user)
         saveLocalStorage(user)
         showRanking();
         changeScreen();
@@ -141,4 +140,49 @@ function checkGameOver() {
 
 function showRanking() {
     $("#player_score").text("Your Score: "+score);
+
+    let topEasy = ["-","-","-"];
+    let topMedium = ["-","-","-"];
+    let topHard = ["-","-","-"];
+    let countEasy = 0;
+    let countMedium = 0;
+    let countHard = 0;
+    let arr = JSON.parse(localStorage.getItem('User'));
+    arr.sort(compare);
+    console.log(arr);
+    for(i = 0; i < arr.length; i++) {
+        if (arr[i].difficulty == "easy") {
+            if (countEasy < 3) {
+                topEasy[countEasy] = arr[i];
+                countEasy++;
+            }
+        }
+        if (arr[i].difficulty == "medium") {
+            if (countMedium < 3) {
+                topMedium[countMedium] = arr[i];
+                countMedium++;
+            }
+        }
+        if (arr[i].difficulty == "hard") {
+            if (countHard < 3) {
+                topHard[countHard] = arr[i];
+                countHard++;
+            }
+        }
+    }
+    $("#rnkFirst .rnkE").text(topEasy[0].name);
+    $("#rnkFirst .rnkM").text(topMedium[0].name);
+    $("#rnkFirst .rnkH").text(topHard[0].name);
+    console.log(topEasy[0].name,topMedium[0].name,topHard[0].name)
+
+}
+
+function compare(a, b) {
+    let comparison = 0;
+    if (a.score > b.score) {
+        comparison = 1;
+    } else if (a.score < b.score) {
+        comparison = -1;
+    }
+    return comparison * -1;
 }
