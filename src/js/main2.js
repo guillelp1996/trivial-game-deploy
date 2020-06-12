@@ -88,6 +88,6 @@ function printQuestion() {
     questions.shift();
 }
 
-checkAnswer() {
+function checkAnswer() {
     console.log($(event.target).text());
 }
