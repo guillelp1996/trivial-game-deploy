@@ -9,10 +9,10 @@ var questions;
 /*************************************  Buttons Event Listeners Beginning ***************************************/
 
 $("#user_page_nextBtn").click(function(){
-    if($("#userName").val() == ""){
+    if($("#userName").val() == "" || $("#userName").val().includes(" ")){
         $("#userName").css("border","1px solid red")
     }else{
-        changeScreen()
+        changeScreen();
     }
 });
 
@@ -89,5 +89,7 @@ function printQuestion() {
 }
 
 function checkAnswer() {
-    console.log($(event.target).text());
+    if ($(event.target).data("correct") == true) {
+        console.log("Correct Answer!!!");
+    }
 }
