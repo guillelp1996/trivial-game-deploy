@@ -1,9 +1,13 @@
-//Global variables
+/*************************************  Global Variables Beginning ***************************************/
+
 var category;
 var difficulty;
 var questions;
 
-// Buttons Event Listeners
+/*************************************  Global Variables Ending *************************************************/
+
+/*************************************  Buttons Event Listeners Beginning ***************************************/
+
 $("#user_page_nextBtn").click(changeScreen);
 
 $("#category_page_nextBtn").click(changeScreen);
@@ -13,12 +17,17 @@ $(".category_page_selectBtn").click( () => {
     category = $(event.target).attr("value");
 });
 
-$("#difficulty_page_nextBtn").click(changeScreen);
+$("#difficulty_page_nextBtn").click( () => {
+    requestAPI()
+    changeScreen();
+});
 
 // Selecting a difficulty and saving on a variable "difficulty"
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
 });
+
+/*************************************  Buttons Event Listeners Ending ***************************************/
 
 // Changing screens for user navigation
 function changeScreen() {
@@ -50,5 +59,22 @@ function requestAPI() {
         }
     }).then((response) => {
         questions = response.data.results;
+        printQuestion();
     });
+}
+
+function printQuestion() {
+    $("#answers").empty();
+    // Saving correct with incorrect answers to shuffle them
+    let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
+    answers.sort(() => Math.random() - 0.5);
+    $("#question").text(questions[0].question);
+    $("#answers").append($("<ul>").append(
+        $("<li>").text(answers[0]),
+        $("<li>").text(answers[1]),
+        $("<li>").text(answers[2]),
+        $("<li>").text(answers[3])
+    ));
+    $("li:contains("+questions[0].correct_answer+")").data("correct",true);
+    questions.shift();
 }
