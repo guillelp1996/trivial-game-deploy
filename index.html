@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <!-- scripts -->
+        <link rel="stylesheet" href="src/style/style.css">
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -13,10 +14,10 @@
             <div id="user_page">
                 <input type="text" name="" placeholder="Insert Name" id="userName">
                 <input type="button" value="Quick Play">
-                <input type="button" value="Next!">
+                <input type="button" value="Next!" id="user_page_nextBtn">
             </div>
 
-            <div id="category_page">
+            <div id="category_page" class="hidden">
                 <div>
                     <input type="button" value="1">
                     <input type="button" value="2">
@@ -28,25 +29,26 @@
                     <input type="button" value="8">
                     <input type="button" value="9">
                 </div>
-                <input type="button" value="Next!">
+                <input type="button" value="Next!" id="category_page_nextBtn">
             </div>
 
-            <div id="dificulty_page">
+            <div id="dificulty_page" class="hidden">
                 <select name="" id="">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
+                <input type="button" value="Next!" id="difficulty_page_nextBtn">
             </div>
 
-            <div id="question_page">
+            <div id="question_page" class="hidden">
                 <h1 id="question">Question</h1>
                 <div id="answers"></div>
                 <div id="lifes">❤️❤️❤️</div>
                 <div id="time"></div>
             </div>
 
-            <div id="gameover_page">
+            <div id="gameover_page" class="hidden">
                 <h1>Game Over</h1>
                 <p id="player_score"></p>
                 <div id="ranking"></div>
@@ -55,5 +57,6 @@
         </div>
         <!-- scripts -->
         <script src="./src/js/main.js"></script>
+        <script src="./src/js/main2.js"></script>
     </body>
 </html>
