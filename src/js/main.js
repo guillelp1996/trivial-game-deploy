@@ -27,7 +27,10 @@ function saveLocalStorage(obj) {
  *  save user name
  */
 
-$("#user_page_quickPlay").click(function() {$("#userName").val("Player")});
+$("#user_page_quickPlay").click(function() {
+    changeScreen();
+    $("#userName").val("Player")
+});
 
 
 /**
