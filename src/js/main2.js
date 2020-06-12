@@ -12,7 +12,7 @@ var lifes = 3;
 
 $("#user_page_nextBtn").click(function(){
     if($("#userName").val() == "" || $("#userName").val().includes(" ")){
-        $("#userName").css("border","1px solid red")
+        $("#userName").css("border","1px solid red");
     }else{
         changeScreen();
     }
@@ -27,14 +27,17 @@ $(".category_page_selectBtn").click( () => {
 });
 
 $("#difficulty_page_nextBtn").click( () => {
-    requestAPI()
-    changeScreen();
+    if($("#difficulty_page_select").val() == "") {
+        $("#difficulty_page_select").css("border","1px solid red");
+    } else {
+        requestAPI()
+        changeScreen();
+    }
 });
 
 // Selecting a difficulty and saving on a variable "difficulty"
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
-    
     console.log(difficulty)
 
 });
@@ -76,13 +79,9 @@ function requestAPI() {
 }
 
 function printQuestion() {
-    
+
     $("#answers").empty();
-<<<<<<< HEAD
     countdown()
-    
-=======
->>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
@@ -102,14 +101,11 @@ function printQuestion() {
 }
 
 function checkAnswer() {
-    
+
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
-<<<<<<< HEAD
         clearInterval(downloadTimer)
-=======
         score += 10;
->>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     } else {
         clearInterval(downloadTimer)
         console.log("Incorrect Answer!!!");
@@ -130,7 +126,8 @@ function checkAnswer() {
 function checkGameOver() {
     if (lifes == 0) {
         isGameOver = true;
-        let user = {"name":$("#userName").val(), "score":score};
+        let user = {"name":$("#userName").val(), "score":score, "difficulty":difficulty};
+        console.log(user)
         saveLocalStorage(user)
         showRanking();
         changeScreen();
