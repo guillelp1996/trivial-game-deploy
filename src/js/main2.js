@@ -77,14 +77,18 @@ function printQuestion() {
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
+    // Updating question's title
     $("#question").text(questions[0].question);
+    // Appending all the answers
     $("#answers").append($("<ul>").append(
         $("<li>").text(answers[0]).click(checkAnswer),
         $("<li>").text(answers[1]).click(checkAnswer),
         $("<li>").text(answers[2]).click(checkAnswer),
         $("<li>").text(answers[3]).click(checkAnswer)
     ));
+    // Setting data="correct" for the correct answer
     $("li:contains("+questions[0].correct_answer+")").data("correct",true);
+    // Excluding the printed question from the "questions" array
     questions.shift();
 }
 
