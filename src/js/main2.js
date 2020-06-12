@@ -1,6 +1,7 @@
 //Global variables
 var category;
 var difficulty;
+var questions;
 
 // Buttons Event Listeners
 $("#user_page_nextBtn").click(changeScreen);
@@ -41,6 +42,7 @@ function changeScreen() {
     }
 }
 
+// Request questions to API and save them to "questions" variable
 function requestAPI() {
     axios.get("https://opentdb.com/api.php", {
         params :{
@@ -49,6 +51,6 @@ function requestAPI() {
             difficulty: difficulty
         }
     }).then((response) => {
-        console.log(response);
+        questions = response.data.results;
     });
 }
