@@ -1,7 +1,23 @@
+//Global variables
+var category;
+var difficulty;
+
 // Buttons Event Listeners
 $("#user_page_nextBtn").click(changeScreen);
+
 $("#category_page_nextBtn").click(changeScreen);
+
+// Selecting a category for trivia and saving on variable "category"
+$(".category_page_selectBtn").click( () => {
+    category = $(event.target).attr("value");
+});
+
 $("#difficulty_page_nextBtn").click(changeScreen);
+
+// Selecting a difficulty and saving on a variable "difficulty"
+$("#difficulty_page_select").change( () => {
+    difficulty = $(event.target).val();
+});
 
 // Changing screens for user navigation
 function changeScreen() {
@@ -21,4 +37,8 @@ function changeScreen() {
         $("#gameover_page").slideToggle("slow");
         $("#user_page").slideToggle("slow");
     }
+}
+
+function requestAPI() {
+
 }
