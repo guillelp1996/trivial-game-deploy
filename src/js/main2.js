@@ -170,10 +170,15 @@ function showRanking() {
             }
         }
     }
-    $("#rnkFirst .rnkE").text(topEasy[0].name);
-    $("#rnkFirst .rnkM").text(topMedium[0].name);
-    $("#rnkFirst .rnkH").text(topHard[0].name);
-    console.log(topEasy[0].name,topMedium[0].name,topHard[0].name)
+    $("rnk1E").text(topEasy[0].name);
+    $("rnk1M").text(topMedium[0].name);
+    $("rnk1H").text(topHard[0].name);
+    $("rnk2E").text(topEasy[1].name);
+    $("rnk2M").text(topMedium[1].name);
+    $("rnk2H").text(topHard[1].name);
+    $("rnk3E").text(topEasy[2].name);
+    $("rnk3M").text(topMedium[2].name);
+    $("rnk3H").text(topHard[2].name);
 
 }
 
