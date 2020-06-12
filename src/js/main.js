@@ -1,6 +1,6 @@
 var isGameOver = false;
 var UserObj = {
-    name: "",
+    name: "player",
     score: 0
 }
 
@@ -10,16 +10,16 @@ var UserObj = {
 /**
  * this save and write the local storage
  */
-function saveLocalStorage(obj){
-    if(localStorage.getItem('User') === null) {
+function saveLocalStorage(obj) {
+    if (localStorage.getItem('User') === null) {
         let arr = [];
         arr.push(obj);
         localStorage.setItem('User', JSON.stringify(arr));
-      } else {
+    } else {
         let arr = JSON.parse(localStorage.getItem('User'));
         arr.push(obj);
         localStorage.setItem('User', JSON.stringify(arr));
-      }
+    }
 }
 // example of saveLocalStorage(UserObj) 
 
@@ -27,9 +27,21 @@ function saveLocalStorage(obj){
  *  save user name
  */
 
- function userValidation(){
-     
- }
+$("#user_page_nextBtn").click(saveUser)
+$("#user_page_quickPlay").click(saveUser)
+function saveUser(){
+    let name = $("#userName").val()
+    if (name == ""){
+        // console.log(UserObj)
+        saveLocalStorage(UserObj)
+    }else{
+        UserObj.name = name
+        saveLocalStorage(UserObj)
+    }
+}
+
+
+
 
 
 // guilherme´s Code
