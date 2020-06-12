@@ -1,12 +1,28 @@
+var isGameOver = false;
+var UserObj = {
+    name: "",
+    score: 0
+}
+
+
+
+
 /**
  * this save and write the local storage
  */
-
-
-function saveLocalStorage(){
-    let storage = localStorage.getItem("User")
-    if (storage == null){
-        console.log("no local storge")
-    }
+function saveLocalStorage(obj){
+    if(localStorage.getItem('User') === null) {
+        let arr = [];
+        arr.push(obj);
+        localStorage.setItem('User', JSON.stringify(arr));
+      } else {
+        let arr = JSON.parse(localStorage.getItem('User'));
+        arr.push(obj);
+        localStorage.setItem('User', JSON.stringify(arr));
+      }
 }
-saveLocalStorage()
+// example of saveLocalStorage(UserObj) 
+
+
+
+// guilherme´s Code
