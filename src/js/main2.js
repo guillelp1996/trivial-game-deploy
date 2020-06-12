@@ -3,7 +3,7 @@
 var category;
 var difficulty;
 var questions;
-var score;
+var score = 0;
 var lifes = 3;
 
 /*************************************  Global Variables Ending *************************************************/
@@ -78,8 +78,11 @@ function requestAPI() {
 function printQuestion() {
     
     $("#answers").empty();
+<<<<<<< HEAD
     countdown()
     
+=======
+>>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
@@ -102,7 +105,11 @@ function checkAnswer() {
     
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
+<<<<<<< HEAD
         clearInterval(downloadTimer)
+=======
+        score += 10;
+>>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     } else {
         clearInterval(downloadTimer)
         console.log("Incorrect Answer!!!");
@@ -113,7 +120,6 @@ function checkAnswer() {
         if (questions.length > 0) {
             // Shows the next question
             printQuestion();
-            
         } else {
             // Makes a new request if player answered all the first 10 questions
             requestAPI();
@@ -124,6 +130,13 @@ function checkAnswer() {
 function checkGameOver() {
     if (lifes == 0) {
         isGameOver = true;
+        let user = {"name":$("#userName").val(), "score":score};
+        saveLocalStorage(user)
+        showRanking();
         changeScreen();
     }
+}
+
+function showRanking() {
+    $("#player_score").text("Your Score: "+score);
 }
