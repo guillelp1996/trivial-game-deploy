@@ -34,6 +34,7 @@ $("#difficulty_page_nextBtn").click( () => {
 // Selecting a difficulty and saving on a variable "difficulty"
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
+    
     console.log(difficulty)
 
 });
@@ -76,6 +77,7 @@ function requestAPI() {
 
 function printQuestion() {
     $("#answers").empty();
+    
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
@@ -92,6 +94,7 @@ function printQuestion() {
     $("li:contains("+questions[0].correct_answer+")").data("correct",true);
     // Excluding the printed question from the "questions" array
     questions.shift();
+    countdown()
 }
 
 function checkAnswer() {
@@ -107,6 +110,7 @@ function checkAnswer() {
         if (questions.length > 0) {
             // Shows the next question
             printQuestion();
+            
         } else {
             // Makes a new request if player answered all the first 10 questions
             requestAPI();

@@ -46,6 +46,7 @@ function saveUser() {
 
 function countdown(level) {
     var timeleft;
+    console.log(level)
 
     switch(level){
         case "easy":
@@ -64,6 +65,8 @@ function countdown(level) {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("countdown").innerHTML = "Finished";
+            changeScreen()
+            timeleft = 60
         } else {
             document.getElementById("countdown").innerHTML = timeleft + " seconds";
         }
