@@ -15,6 +15,7 @@ $("#category_page_nextBtn").click(changeScreen);
 // Selecting a category for trivia and saving on variable "category"
 $(".category_page_selectBtn").click( () => {
     category = $(event.target).attr("value");
+    console.log(category)
 });
 
 $("#difficulty_page_nextBtn").click( () => {
@@ -25,6 +26,8 @@ $("#difficulty_page_nextBtn").click( () => {
 // Selecting a difficulty and saving on a variable "difficulty"
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
+    console.log(difficulty)
+    
 });
 
 /*************************************  Buttons Event Listeners Ending ***************************************/
