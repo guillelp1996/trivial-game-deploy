@@ -22,7 +22,7 @@ function saveLocalStorage(obj) {
         localStorage.setItem('User', JSON.stringify(arr));
     }
 }
-// example of saveLocalStorage(UserObj) 
+// example of saveLocalStorage(UserObj)
 
 /**
  *  save user name
