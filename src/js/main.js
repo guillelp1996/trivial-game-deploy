@@ -40,7 +40,7 @@ $("#user_page_quickPlay").click(function() {
 
 function countdown(level) {
     var timeleft;
-    console.log(level)
+    console.log("guillee "+level)
 
     switch(level){
         case "easy":
