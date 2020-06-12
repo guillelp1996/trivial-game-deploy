@@ -146,4 +146,6 @@ function resetGame(){
     $("input[type=text]").val("");
     $("select").val("");
     score = 0;
+    life = 3;
+    isGameOver= false
 }
