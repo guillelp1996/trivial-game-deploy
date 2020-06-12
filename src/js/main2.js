@@ -91,5 +91,7 @@ function printQuestion() {
 function checkAnswer() {
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
+    } else {
+        console.log("Incorrect Answer!!!");
     }
 }
