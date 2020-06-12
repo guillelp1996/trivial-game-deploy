@@ -1,4 +1,5 @@
 var isGameOver = false;
+var downloadTimer;
 var UserObj = {
     name: "player",
     score: 0
@@ -61,7 +62,7 @@ function countdown(level) {
         default:
             timeleft = 60
     }
-    var downloadTimer = setInterval(function () {
+    downloadTimer = setInterval(function () {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("countdown").innerHTML = "Finished";
@@ -73,6 +74,9 @@ function countdown(level) {
         timeleft -= 1;
     }, 1000);
 }
+
+
+
 
 
 

@@ -76,7 +76,9 @@ function requestAPI() {
 }
 
 function printQuestion() {
+    
     $("#answers").empty();
+    countdown()
     
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
@@ -94,13 +96,15 @@ function printQuestion() {
     $("li:contains("+questions[0].correct_answer+")").data("correct",true);
     // Excluding the printed question from the "questions" array
     questions.shift();
-    countdown()
 }
 
 function checkAnswer() {
+    
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
+        clearInterval(downloadTimer)
     } else {
+        clearInterval(downloadTimer)
         console.log("Incorrect Answer!!!");
         lifes--;
         checkGameOver();
