@@ -33,7 +33,7 @@ $("#difficulty_page_nextBtn").click( () => {
 $("#difficulty_page_select").change( () => {
     difficulty = $(event.target).val();
     console.log(difficulty)
-    
+
 });
 
 /*************************************  Buttons Event Listeners Ending ***************************************/
@@ -79,11 +79,15 @@ function printQuestion() {
     answers.sort(() => Math.random() - 0.5);
     $("#question").text(questions[0].question);
     $("#answers").append($("<ul>").append(
-        $("<li>").text(answers[0]),
-        $("<li>").text(answers[1]),
-        $("<li>").text(answers[2]),
-        $("<li>").text(answers[3])
+        $("<li>").text(answers[0]).click(checkAnswer),
+        $("<li>").text(answers[1]).click(checkAnswer),
+        $("<li>").text(answers[2]).click(checkAnswer),
+        $("<li>").text(answers[3]).click(checkAnswer)
     ));
     $("li:contains("+questions[0].correct_answer+")").data("correct",true);
     questions.shift();
+}
+
+checkAnswer() {
+    console.log($(event.target).text());
 }
