@@ -40,5 +40,13 @@ function changeScreen() {
 }
 
 function requestAPI() {
-
+    axios.get("https://opentdb.com/api.php", {
+        params :{
+            amount: 10,
+            category: category,
+            difficulty: difficulty
+        }
+    }).then((response) => {
+        console.log(response);
+    });
 }
