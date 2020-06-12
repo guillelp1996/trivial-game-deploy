@@ -42,9 +42,9 @@ $("#difficulty_page_select").change( () => {
 
 });
 
-$("#gameover_page_resetBtn").click(function() {
-    resetGame();
-    changeScreen();
+$("#btn_tryAgain").click(function(){
+    resetGame()
+    changeScreen()
 })
 
 /*************************************  Buttons Event Listeners Ending ***************************************/
@@ -185,4 +185,11 @@ function compare(a, b) {
         comparison = -1;
     }
     return comparison * -1;
+}
+function resetGame(){
+    $("input[type=text]").val("");
+    $("select").val("");
+    score = 0;
+    life = 3;
+    isGameOver= false
 }
