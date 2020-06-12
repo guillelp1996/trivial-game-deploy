@@ -22,7 +22,7 @@ $("#category_page_nextBtn").click(changeScreen);
 
 // Selecting a category for trivia and saving on variable "category"
 $(".category_page_selectBtn").click( () => {
-    category = $(event.target).attr("value");
+    category = $(event.target).attr("data-category");
     console.log(category)
 });
 
