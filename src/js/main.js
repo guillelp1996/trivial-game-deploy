@@ -29,8 +29,12 @@ function saveLocalStorage(obj) {
  */
 
 $("#user_page_quickPlay").click(function() {
-    changeScreen();
+    $("#user_page").slideToggle("slow");
     $("#userName").val("Player")
+    category = "";
+    difficulty = "";
+    requestAPI();
+    $("#question_page").slideToggle("slow")
 });
 
 
