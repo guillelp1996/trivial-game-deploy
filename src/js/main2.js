@@ -78,11 +78,8 @@ function requestAPI() {
 function printQuestion() {
     
     $("#answers").empty();
-<<<<<<< HEAD
     countdown()
     
-=======
->>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
@@ -105,11 +102,8 @@ function checkAnswer() {
     
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
-<<<<<<< HEAD
         clearInterval(downloadTimer)
-=======
         score += 10;
->>>>>>> 56386e3f49e01128be6988f6ec72fdba15571898
     } else {
         clearInterval(downloadTimer)
         console.log("Incorrect Answer!!!");
