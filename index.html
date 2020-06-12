@@ -6,6 +6,7 @@
         <title>Document</title>
         <!-- scripts -->
         <link rel="stylesheet" href="src/style/style.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -19,21 +20,21 @@
 
             <div id="category_page" class="hidden">
                 <div>
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="3">
-                    <input type="button" value="4">
-                    <input type="button" value="5">
-                    <input type="button" value="6">
-                    <input type="button" value="7">
-                    <input type="button" value="8">
-                    <input type="button" value="9">
+                    <input type="button" value="1" class="category_page_selectBtn">
+                    <input type="button" value="2" class="category_page_selectBtn">
+                    <input type="button" value="3" class="category_page_selectBtn">
+                    <input type="button" value="4" class="category_page_selectBtn">
+                    <input type="button" value="5" class="category_page_selectBtn">
+                    <input type="button" value="6" class="category_page_selectBtn">
+                    <input type="button" value="7" class="category_page_selectBtn">
+                    <input type="button" value="8" class="category_page_selectBtn">
+                    <input type="button" value="9" class="category_page_selectBtn">
                 </div>
                 <input type="button" value="Next!" id="category_page_nextBtn">
             </div>
 
             <div id="dificulty_page" class="hidden">
-                <select name="" id="">
+                <select name="" id="difficulty_page_select">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
