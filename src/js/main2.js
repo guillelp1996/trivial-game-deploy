@@ -22,7 +22,7 @@ $("#category_page_nextBtn").click(changeScreen);
 
 // Selecting a category for trivia and saving on variable "category"
 $(".category_page_selectBtn").click( () => {
-    category = $(event.target).attr("value");
+    category = $(event.target).attr("data-category");
     console.log(category)
 });
 
@@ -100,14 +100,19 @@ function printQuestion() {
 function checkAnswer() {
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
-        printQuestion();
     } else {
         console.log("Incorrect Answer!!!");
         lifes--;
         checkGameOver();
-        if (!isGameOver) {
+    }
+    if (!isGameOver) {
+        if (questions.length > 0) {
+            // Shows the next question
             printQuestion();
             
+        } else {
+            // Makes a new request if player answered all the first 10 questions
+            requestAPI();
         }
     }
 }
