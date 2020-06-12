@@ -77,7 +77,6 @@ function requestAPI() {
 
 function printQuestion() {
     $("#answers").empty();
-    
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
@@ -110,7 +109,6 @@ function checkAnswer() {
         if (questions.length > 0) {
             // Shows the next question
             printQuestion();
-            
         } else {
             // Makes a new request if player answered all the first 10 questions
             requestAPI();
@@ -121,6 +119,8 @@ function checkAnswer() {
 function checkGameOver() {
     if (lifes == 0) {
         isGameOver = true;
+        let user = {"name":$("#userName").val(), "score":score};
+        saveLocalStorage(user)
         showRanking();
         changeScreen();
     }
