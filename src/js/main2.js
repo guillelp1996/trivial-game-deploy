@@ -194,8 +194,8 @@ function compare(a, b) {
 function resetGame(){
     $("input[type=text]").val("");
     $("select").val("");
+    questions = [];
     score = 0;
     lifes = 3;
     isGameOver= false
-    
 }
