@@ -9,7 +9,7 @@ var questions;
 /*************************************  Buttons Event Listeners Beginning ***************************************/
 
 $("#user_page_nextBtn").click(function(){
-    if($("#userName").val() == ""){
+    if($("#userName").val() == "" || $("#userName").val().includes(" ") ){
         $("#userName").css("border","1px solid red")
     }else{
         changeScreen()
