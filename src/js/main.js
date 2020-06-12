@@ -23,6 +23,13 @@ function saveLocalStorage(obj){
 }
 // example of saveLocalStorage(UserObj) 
 
+/**
+ *  save user name
+ */
+
+ function userValidation(){
+     
+ }
 
 
 // guilherme´s Code
