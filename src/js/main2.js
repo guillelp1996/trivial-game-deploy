@@ -42,6 +42,11 @@ $("#difficulty_page_select").change( () => {
 
 });
 
+$("#gameover_page_resetBtn").click(function() {
+    resetGame();
+    changeScreen();
+})
+
 /*************************************  Buttons Event Listeners Ending ***************************************/
 
 // Changing screens for user navigation
