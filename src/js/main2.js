@@ -3,6 +3,8 @@
 var category;
 var difficulty;
 var questions;
+var score;
+var lifes = 3;
 
 /*************************************  Global Variables Ending *************************************************/
 
@@ -95,7 +97,20 @@ function printQuestion() {
 function checkAnswer() {
     if ($(event.target).data("correct") == true) {
         console.log("Correct Answer!!!");
+        printQuestion();
     } else {
         console.log("Incorrect Answer!!!");
+        lifes--;
+        checkGameOver();
+        if (!isGameOver) {
+            printQuestion();
+        }
+    }
+}
+
+function checkGameOver() {
+    if (lifes == 0) {
+        isGameOver = true;
+        changeScreen();
     }
 }
