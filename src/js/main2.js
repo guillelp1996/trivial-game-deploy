@@ -51,7 +51,7 @@ function changeScreen() {
     } else if($("#dificulty_page").is(":visible")) {
         $("#dificulty_page").slideToggle("slow");
         $("#question_page").slideToggle("slow");
-    } else if($("#question_page").is(":visible") && isGameOver) { //check if game is over to change to GameOver screen
+    } else if($("#question_page").is(":visible")) {
         $("#question_page").slideToggle("slow");
         $("#gameover_page").slideToggle("slow");
     } else if($("#gameover_page").is(":visible")) {
