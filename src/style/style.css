@@ -14,7 +14,10 @@ body {
 .main_container {
     width: 70%;
     margin: 0 auto;
+    background-color: white;
+    border: 1px solid white;
     min-height: 100vh;
+    padding: 40px 0;
 }
 
 /* first page */
@@ -24,9 +27,6 @@ body {
     display:flex;
     flex-flow: column;
     align-items: center;
-    padding: 40px 0;
-    background-color: white;
-    border: 1px solid white;
 }
 
 #user_page > input[type=text] {
