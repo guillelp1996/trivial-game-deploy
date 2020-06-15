@@ -54,6 +54,7 @@ body {
 #user_page > input[type=text]:focus{
     border-radius: 15px ;
     border: 3px solid rgb(194, 194, 194);
+    outline: none;
 }
 
 #user_page > input[type=button] {
