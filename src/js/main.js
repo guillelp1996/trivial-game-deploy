@@ -172,10 +172,10 @@ function printQuestion() {
     $("#question").html(questions[0].question);
     // Appending all the answers
     $("#answers").append($("<ul>").append(
-        $("<li>").text(answers[0]).click(checkAnswer),
-        $("<li>").text(answers[1]).click(checkAnswer),
-        $("<li>").text(answers[2]).click(checkAnswer),
-        $("<li>").text(answers[3]).click(checkAnswer)
+        $("<li>").html(answers[0]).click(checkAnswer),
+        $("<li>").html(answers[1]).click(checkAnswer),
+        $("<li>").html(answers[2]).click(checkAnswer),
+        $("<li>").html(answers[3]).click(checkAnswer)
     ));
 
     // Setting data="correct" for the correct answer
