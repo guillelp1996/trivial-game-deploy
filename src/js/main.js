@@ -178,8 +178,8 @@ function printQuestion() {
         $("#answers").append($("<ul>").append(
             $("<li>").append("<span class='option'>A</span",$("<span>").html(answers[0]).addClass("alternative")).click(checkAnswer),
             $("<li>").append("<span class='option'>B</span",$("<span>").html(answers[1]).addClass("alternative")).click(checkAnswer),
-            $("<li>").append("<span class='option'>D</span",$("<span>").html(answers[3]).addClass("alternative")).click(checkAnswer),
-            $("<li>").append("<span class='option'>C</span",$("<span>").html(answers[2]).addClass("alternative")).click(checkAnswer)
+            $("<li>").append("<span class='option'>C</span",$("<span>").html(answers[3]).addClass("alternative")).click(checkAnswer),
+            $("<li>").append("<span class='option'>D</span",$("<span>").html(answers[2]).addClass("alternative")).click(checkAnswer)
         ));
     } else {
         $("#answers").append($("<ul>").append(
@@ -212,6 +212,7 @@ function checkAnswer() {
             setTimeout(printQuestion,1500);
         } else {
             // Makes a new request if player answered all the first 10 questions
+            $("#question_block").slideToggle();
             setTimeout(requestAPI,1500);
         }
     }
