@@ -208,3 +208,17 @@ body {
     margin: 16px 0;
     font-weight: bod;
 }
+
+#question_page {
+    margin-top: 3%;
+    padding: 0px 40px;
+}
+
+#question_page h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    background-color: rgb(168, 74, 255);
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: whitesmoke;
+}

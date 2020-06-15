@@ -142,6 +142,7 @@ function changeScreen() {
 
 // Request questions to API and save them to "questions" variable
 function requestAPI() {
+    $("#loading").slideToggle();
     axios.get("https://opentdb.com/api.php", {
         params: {
             amount: 10,
@@ -149,6 +150,8 @@ function requestAPI() {
             difficulty: difficulty
         }
     }).then((response) => {
+        $("#loading").slideToggle();
+        $("#question_block").slideToggle();
         questions = response.data.results;
         printQuestion();
     });
