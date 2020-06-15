@@ -158,7 +158,7 @@ function printQuestion() {
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
     answers.sort(() => Math.random() - 0.5);
     // Updating question's title
-    $("#question").text(questions[0].question);
+    $("#question").html(questions[0].question);
     // Appending all the answers
     $("#answers").append($("<ul>").append(
         $("<li>").text(answers[0]).click(checkAnswer),
