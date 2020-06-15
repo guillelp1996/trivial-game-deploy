@@ -1,13 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    list-style: none;
 }
 
 body {
     background-color: rgb(149, 35, 255);
-    background-image: url("../img/bg-pattern.jpg");
 }
 
 .hidden {
@@ -15,30 +12,25 @@ body {
 }
 
 .main_container {
-    width: 50%;
-    height: 80vh;
-    margin: 5% auto 0 auto;
+    width: 70%;
+    margin: 0 auto;
     background-color: white;
     border: 1px solid white;
-    padding: 40px;
-    border-radius: 9px;
-}
-
-.main_container img {
-    display: block;
-    margin: 0 auto;
+    min-height: 100vh;
+    padding: 40px 0;
 }
 
 /* first page */
 
 #user_page {
+    min-height: 90vh;
     display:flex;
     flex-flow: column;
     align-items: center;
 }
 
 #user_page > input[type=text] {
-    margin: 100px auto;
+    margin: 200px auto;
     width: 300px;
     text-align: center;
     padding: 10px;
@@ -47,7 +39,6 @@ body {
     border: 3px solid rgb(194, 194, 194);
     background-color: rgb(163, 99, 223);
     color: whitesmoke;
-    outline: none;
 }
 
 #user_page > input[type=text]::placeholder {
@@ -68,40 +59,4 @@ body {
     border: 1px solid rgb(204, 204, 204);
     background-color: indigo;
     color: white;
-}
-
-#category_page {
-    text-align: center;
-}
-
-#category_page input[data-category] {
-    font-family: 'Balsamiq Sans', cursive;
-    width: 200px;
-    height: 45px;
-    margin-right: 5%;
-    margin-bottom: 3%;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    color: rgb(44, 44, 44);
-    cursor: pointer;
-    outline: none;
-}
-
-#category_page input[data-category="11"] {
-    background-image: url("../img/film.png");
-    background-repeat: no-repeat;
-    background-size: 45px;
-    background-position: left center;
-    background-color: rgb(224, 224, 94);
-    box-shadow: goldenrod -3px 3px 0px 0px;
-}
-
-#category_page input[data-category="12"] {
-    background-image: url("../img/music.png");
-    background-repeat: no-repeat;
-    background-size: 45px;
-    background-position: left center;
-    background-color: rgb(129, 129, 248);
-    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
 }
