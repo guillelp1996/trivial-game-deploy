@@ -16,16 +16,16 @@ var UserObj = {
 
 /*************************************  Buttons Event Listeners Beginning ***************************************/
 
-$("#user_page_nextBtn").click(function(){
-    if($("#userName").val() == "" || $("#userName").val().includes(" ")){
-        $("#userName").css("border","3px solid red");
-    }else{
+$("#user_page_nextBtn").click(function () {
+    if ($("#userName").val() == "" || $("#userName").val().includes(" ")) {
+        $("#userName").css("border", "3px solid red");
+    } else {
         changeScreen();
     }
 });
 
-$("#category_page_nextBtn").click(function(){
-    if(category == undefined) {
+$("#category_page_nextBtn").click(function () {
+    if (category == undefined) {
         $("#category_page").append("<p>Please select a category</p>")
     } else {
         changeScreen();
@@ -33,13 +33,13 @@ $("#category_page_nextBtn").click(function(){
 });
 
 // Selecting a category for trivia and saving on variable "category"
-$(".category_page_selectBtn").click( () => {
+$(".category_page_selectBtn").click(() => {
     category = $(event.target).attr("data-category");
 });
 
-$("#difficulty_page_nextBtn").click( () => {
-    if($("#difficulty_page_select").val() == "") {
-        $("#difficulty_page_select").css("border","3px solid red");
+$("#difficulty_page_nextBtn").click(() => {
+    if ($("#difficulty_page_select").val() == "") {
+        $("#difficulty_page_select").css("border", "3px solid red");
     } else {
         requestAPI()
         changeScreen();
@@ -47,16 +47,16 @@ $("#difficulty_page_nextBtn").click( () => {
 });
 
 // Selecting a difficulty and saving on a variable "difficulty"
-$("#difficulty_page_select").change( () => {
+$("#difficulty_page_select").change(() => {
     difficulty = $(event.target).val();
 });
 
-$("#btn_tryAgain").click(function(){
+$("#btn_tryAgain").click(function () {
     resetGame()
     changeScreen()
 })
 
-$("#user_page_quickPlay").click(function() {
+$("#user_page_quickPlay").click(function () {
     $("#user_page").slideToggle("slow");
     $("#userName").val("Player")
     category = "";
@@ -90,7 +90,7 @@ function saveLocalStorage(obj) {
 function countdown(level) {
     var timeleft;
 
-    switch(level){
+    switch (level) {
         case "easy":
             timeleft = 120
             break;
@@ -118,19 +118,19 @@ function countdown(level) {
 
 // Changing screens for user navigation
 function changeScreen() {
-    if($("#user_page").is(":visible")) {
+    if ($("#user_page").is(":visible")) {
         $("#user_page").slideToggle("slow");
         $("#category_page").slideToggle("slow");
-    } else if($("#category_page").is(":visible")) {
+    } else if ($("#category_page").is(":visible")) {
         $("#category_page").slideToggle("slow");
         $("#dificulty_page").slideToggle("slow");
-    } else if($("#dificulty_page").is(":visible")) {
+    } else if ($("#dificulty_page").is(":visible")) {
         $("#dificulty_page").slideToggle("slow");
         $("#question_page").slideToggle("slow");
-    } else if($("#question_page").is(":visible")) {
+    } else if ($("#question_page").is(":visible")) {
         $("#question_page").slideToggle("slow");
         $("#gameover_page").slideToggle("slow");
-    } else if($("#gameover_page").is(":visible")) {
+    } else if ($("#gameover_page").is(":visible")) {
         $("#gameover_page").slideToggle("slow");
         $("#user_page").slideToggle("slow");
     }
@@ -139,7 +139,7 @@ function changeScreen() {
 // Request questions to API and save them to "questions" variable
 function requestAPI() {
     axios.get("https://opentdb.com/api.php", {
-        params :{
+        params: {
             amount: 10,
             category: category,
             difficulty: difficulty
@@ -149,10 +149,17 @@ function requestAPI() {
         printQuestion();
     });
 }
+function showHearts() {
+    $("#lifes").empty();
+    for (let i = 0; i < lifes; i++) {
+        lifes[i] += $("#lifes").append("❤️");
+    }
+}
 
 function printQuestion() {
 
     $("#answers").empty();
+    showHearts()
     countdown(difficulty)
     // Saving correct with incorrect answers to shuffle them
     let answers = [questions[0].correct_answer, questions[0].incorrect_answers[0], questions[0].incorrect_answers[1], questions[0].incorrect_answers[2]];
@@ -166,8 +173,9 @@ function printQuestion() {
         $("<li>").text(answers[2]).click(checkAnswer),
         $("<li>").text(answers[3]).click(checkAnswer)
     ));
+
     // Setting data="correct" for the correct answer
-    $("li:contains("+questions[0].correct_answer+")").data("correct",true);
+    $("li:contains(" + questions[0].correct_answer + ")").data("correct", true);
     // Excluding the printed question from the "questions" array
     questions.shift();
 }
@@ -195,7 +203,7 @@ function checkAnswer() {
 function checkGameOver() {
     if (lifes == 0) {
         isGameOver = true;
-        let user = {"name":$("#userName").val(), "score":score, "difficulty":difficulty};
+        let user = { "name": $("#userName").val(), "score": score, "difficulty": difficulty };
         saveLocalStorage(user)
         showRanking();
         changeScreen();
@@ -204,7 +212,7 @@ function checkGameOver() {
 
 // Takes all scores from LocalStorage, order by highest first and prints the top 3 scores by difficulty
 function showRanking() {
-    $("#player_score").text("Your Score: "+score);
+    $("#player_score").text("Your Score: " + score);
     let topEasy = [];
     let topMedium = [];
     let topHard = [];
@@ -213,7 +221,7 @@ function showRanking() {
     let countHard = 0;
     let arr = JSON.parse(localStorage.getItem('User'));
     arr.sort(compare);
-    for(i = 0; i < arr.length; i++) {
+    for (i = 0; i < arr.length; i++) {
         if (arr[i].difficulty == "easy") {
             if (countEasy < 3) {
                 topEasy[countEasy] = arr[i];
@@ -235,19 +243,19 @@ function showRanking() {
     }
     for (let i = 0; i < 3; i++) {
         if (topEasy[i] != undefined) {
-            $("#rank"+i+"E").text(topEasy[i].name + " - Score: " + topEasy[i].score);
+            $("#rank" + i + "E").text(topEasy[i].name + " - Score: " + topEasy[i].score);
         } else {
-            $("#rank"+i+"E").text("-");
+            $("#rank" + i + "E").text("-");
         }
         if (topMedium[i] != undefined) {
-            $("#rank"+i+"M").text(topMedium[i].name + " - Score: " + topMedium[i].score);
+            $("#rank" + i + "M").text(topMedium[i].name + " - Score: " + topMedium[i].score);
         } else {
-            $("#rank"+i+"M").text("-");
+            $("#rank" + i + "M").text("-");
         }
         if (topHard[i] != undefined) {
-            $("#rank"+i+"H").text(topHard[i].name + " - Score: " + topHard[i].score);
+            $("#rank" + i + "H").text(topHard[i].name + " - Score: " + topHard[i].score);
         } else {
-            $("#rank"+i+"H").text("-");
+            $("#rank" + i + "H").text("-");
         }
     }
 }
@@ -264,12 +272,12 @@ function compare(a, b) {
 }
 
 // Function to reset all necesserary functions to start a new game
-function resetGame(){
+function resetGame() {
     $("input[type=text]").val("");
     $("select").val("");
     questions = [];
     category = undefined;
     score = 0;
     lifes = 3;
-    isGameOver= false
+    isGameOver = false
 }
