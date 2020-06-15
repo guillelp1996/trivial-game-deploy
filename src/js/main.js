@@ -25,7 +25,7 @@ $("#user_page_nextBtn").click(function () {
 });
 
 $("#category_page_nextBtn").click(function () {
-    $(".error-msg").removeClass("error-msg");
+    $(".error-msg").remove();
     if (category == undefined) {
         $("#category_page").append('<p class="error-msg">Please select a category</p>');
     } else {
