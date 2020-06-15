@@ -3,51 +3,54 @@
     margin: 0;
 }
 
+body {
+    background-color: rgb(149, 35, 255);
+}
+
 .hidden {
     display: none;
 }
 
-.main_container{
-    width: 100%;
+.main_container {
+    width: 70%;
+    margin: 0 auto;
     min-height: 100vh;
-    /* padding: 40px 0; */
-    background-color: rgb(149, 35, 255);
 }
 
 /* first page */
 
-#user_page{
-    width: 70%;
+#user_page {
     min-height: 90vh;
     display:flex;
-    margin: auto;
     flex-flow: column;
     align-items: center;
     padding: 40px 0;
     background-color: white;
     border: 1px solid white;
 }
-#user_page > input[type=text]{
- margin: 200px auto;
- width: 300px;
- text-align: center;
- padding: 10px;
- font-size: 50px;
- border-radius: 15px ;
- border: 3px solid rgb(194, 194, 194);
- background-color: rgb(163, 99, 223);
- color: whitesmoke;
-}
-#user_page > input[type=text]::placeholder{
+
+#user_page > input[type=text] {
+    margin: 200px auto;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    border-radius: 15px ;
+    border: 3px solid rgb(194, 194, 194);
+    background-color: rgb(163, 99, 223);
     color: whitesmoke;
 }
+
+#user_page > input[type=text]::placeholder {
+    color: whitesmoke;
+}
+
 #user_page > input[type=text]:focus{
     border-radius: 15px ;
     border: 3px solid rgb(194, 194, 194);
 }
 
-#user_page > input[type=button]{
-
+#user_page > input[type=button] {
     width: 200px;
     height: 50px;
     margin: 30px auto;
