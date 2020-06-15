@@ -1,13 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    list-style: none;
 }
 
 body {
     background-color: rgb(149, 35, 255);
-    background-image: url("../img/bg-pattern.jpg");
 }
 
 .hidden {
@@ -15,9 +12,8 @@ body {
 }
 
 .main_container {
-    width: 50%;
-    height: 80vh;
-    margin: 5% auto 0 auto;
+    width: 70%;
+    margin: 0 auto;
     background-color: white;
     border: 1px solid white;
     padding: 40px;
@@ -33,13 +29,14 @@ body {
 /* first page */
 
 #user_page {
+    min-height: 90vh;
     display:flex;
     flex-flow: column;
     align-items: center;
 }
 
 #user_page > input[type=text] {
-    margin: 100px auto;
+    margin: 200px auto;
     width: 300px;
     text-align: center;
     padding: 10px;
@@ -48,7 +45,6 @@ body {
     border: 3px solid rgb(194, 194, 194);
     background-color: rgb(163, 99, 223);
     color: whitesmoke;
-    outline: none;
 }
 
 #user_page > input[type=text]::placeholder {
