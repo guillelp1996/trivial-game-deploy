@@ -28,13 +28,16 @@ $("#category_page_nextBtn").click(function () {
     if (category == undefined) {
         $("#category_page").append("<p>Please select a category</p>")
     } else {
+        $(".category-selected").removeClass("category-selected");
         changeScreen();
     }
 });
 
 // Selecting a category for trivia and saving on variable "category"
 $(".category_page_selectBtn").click(() => {
+    $(".category-selected").removeClass("category-selected");
     category = $(event.target).attr("data-category");
+    $(event.target).addClass("category-selected");
 });
 
 $("#difficulty_page_nextBtn").click(() => {
