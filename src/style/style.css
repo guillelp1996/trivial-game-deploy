@@ -265,7 +265,19 @@ body {
     padding: 0 20px;
 }
 
-/* select dificulty style */
+#lifes {
+    float: right;
+    font-size: 22px;
+}
+
+#countdown {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* select dificultty style */
 
 #dificulty_page >*{
     display: block;
@@ -278,11 +290,13 @@ body {
 /* game over style */
 
 #gameover_page h1, #player_score{
+    font-family: 'Balsamiq Sans', cursive;
     width: 100%;
-    margin: 25px;
+    margin: 25px 0;
     text-align: center;
 }
 #gameover_page h1, #gameover_page h2{
+    font-family: 'Balsamiq Sans', cursive;
     font-size: 40px;
 }
 #player_score{
@@ -300,7 +314,6 @@ table {
     width: 100%;
     margin: 50px auto;
 }
-  
 table td, table th {
     border: 1px solid #ddd;
     padding: 8px;
