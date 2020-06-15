@@ -29,7 +29,6 @@ body {
 /* first page */
 
 #user_page {
-    min-height: 90vh;
     display:flex;
     flex-flow: column;
     align-items: center;
