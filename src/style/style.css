@@ -16,8 +16,14 @@ body {
     margin: 0 auto;
     background-color: white;
     border: 1px solid white;
-    min-height: 100vh;
-    padding: 40px 0;
+    padding: 40px;
+    border-radius: 9px;
+    box-shadow: rgba(129, 15, 182, 0.349) -2px 2px 0px 2px;
+}
+
+.main_container img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* first page */
@@ -59,4 +65,67 @@ body {
     border: 1px solid rgb(204, 204, 204);
     background-color: indigo;
     color: white;
+}
+
+#category_page {
+    text-align: center;
+}
+
+#category_page input[data-category] {
+    font-family: 'Balsamiq Sans', cursive;
+    width: 200px;
+    height: 45px;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: rgb(44, 44, 44);
+    cursor: pointer;
+    outline: none;
+}
+
+#category_page input[data-category="9"] {
+    background-image: url("../img/general.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="11"] {
+    background-image: url("../img/film.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(224, 224, 94);
+    box-shadow: goldenrod -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="12"] {
+    background-image: url("../img/music.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="15"] {
+    background-image: url("../img/game.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="20"] {
+    background-image: url("../img/mythology.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
 }
