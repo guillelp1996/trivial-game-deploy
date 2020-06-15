@@ -175,10 +175,10 @@ function printQuestion() {
     $("#question").html(questions[0].question);
     // Appending all the answers
     $("#answers").append($("<ul>").append(
-        $("<li>").append("<span class='option'>A</span",$("<span>").text(answers[0]).addClass("alternative")).click(checkAnswer),
-        $("<li>").append("<span class='option'>B</span",$("<span>").text(answers[1]).addClass("alternative")).click(checkAnswer),
-        $("<li>").append("<span class='option'>C</span",$("<span>").text(answers[2]).addClass("alternative")).click(checkAnswer),
-        $("<li>").append("<span class='option'>D</span",$("<span>").text(answers[3]).addClass("alternative")).click(checkAnswer)
+        $("<li>").append("<span class='option'>A</span",$("<span>").html(answers[0]).addClass("alternative")).click(checkAnswer),
+        $("<li>").append("<span class='option'>B</span",$("<span>").html(answers[1]).addClass("alternative")).click(checkAnswer),
+        $("<li>").append("<span class='option'>C</span",$("<span>").html(answers[2]).addClass("alternative")).click(checkAnswer),
+        $("<li>").append("<span class='option'>D</span",$("<span>").html(answers[3]).addClass("alternative")).click(checkAnswer)
     ));
 
     // Setting data="correct" for the correct answer
