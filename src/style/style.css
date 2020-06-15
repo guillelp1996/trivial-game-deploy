@@ -8,6 +8,7 @@
 body {
     background-color: rgb(149, 35, 255);
     background-image: url("../img/bg-pattern.jpg");
+    min-width: 900px ;
 }
 
 .hidden {
@@ -63,7 +64,7 @@ body {
     outline: none;
 }
 
-.nextBtn {
+.nextBtn, #dificulty_page select{
     width: 200px;
     height: 50px;
     border-radius: 6px;
@@ -73,8 +74,8 @@ body {
     font-size: 18px;
     background-color: rgb(168, 79, 252);
     border: 6px solid black;
-    color: whitesmoke;
     box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+    color: whitesmoke;
     outline: none;
 }
 
@@ -209,6 +210,8 @@ body {
     font-weight: bod;
 }
 
+/* Question page */
+
 #question_page {
     margin-top: 3%;
     padding: 0px 40px;
@@ -218,7 +221,56 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     background-color: rgb(168, 74, 255);
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 6px;
     color: whitesmoke;
+    line-height: 2.3rem;
+    border: 3px solid black;
+    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+}
+
+#question_page ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+#question_page li {
+    display: inline-block;
+    margin-bottom: 2%;
+    padding: 10px 0px;
+    background-color: rgb(168, 74, 255);
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    border-radius: 6px;
+    border: 3px solid black;
+    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+    cursor: pointer;
+}
+
+#question_page li:hover {
+    box-shadow:  rgb(168, 74, 255) -4px 4px 0px 1px;
+    filter: saturate(150%);
+    transition: 400ms;
+}
+
+.option {
+    height: 100%;
+    padding: 10px 30px;
+    background-color: rgb(199, 97, 247);
+}
+
+.alternative {
+    padding: 0 20px;
+}
+
+/* select dificulty style */
+
+#dificulty_page >*{
+    display: block;
+    margin: 20px auto;
+}
+#dificulty_page select{
+    margin: 100px auto;
 }
