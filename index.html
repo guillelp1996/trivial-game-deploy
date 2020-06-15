@@ -1,84 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <!-- scripts -->
-        <link rel="stylesheet" href="src/style/style.css">
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="main_container">
 
-            <div id="user_page">
-                <img src="https://vignette.wikia.nocookie.net/logopedia/images/c/c2/Trivial-pursuit-byki-logo.png/revision/latest/scale-to-width-down/340?cb=20140107170642" alt="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- scripts -->
+    <link rel="stylesheet" href="src/style/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main_container">
+
+        <div id="user_page">
+            
+                <img src="https://vignette.wikia.nocookie.net/logopedia/images/c/c2/Trivial-pursuit-byki-logo.png/revision/latest/scale-to-width-down/340?cb=20140107170642"
+                    alt="">
                 <input type="text" name="" placeholder="Insert Name" id="userName">
                 <input type="button" value="Quick Play" id="user_page_quickPlay">
                 <input type="button" value="Next!" id="user_page_nextBtn">
-            </div>
-
-            <div id="category_page" class="hidden">
-                <div>
-                    <input type="button" data-category="9" value="General Knowledge" class="category_page_selectBtn">
-                    <input type="button" data-category="11" value="Film" class="category_page_selectBtn">
-                    <input type="button" data-category="12" value="Music" class="category_page_selectBtn">
-                    <input type="button" data-category="15" value="Video Games" class="category_page_selectBtn">
-                    <input type="button" data-category="20" value="Mythology" class="category_page_selectBtn">
-                    <input type="button" data-category="26" value="Celebrities" class="category_page_selectBtn">
-                    <input type="button" data-category="27" value="Animals" class="category_page_selectBtn">
-                    <input type="button" data-category="29" value="Comics" class="category_page_selectBtn">
-                    <input type="button" data-category="" value="All" class="category_page_selectBtn">
-                </div>
-                <input type="button" value="Next!" id="category_page_nextBtn">
-            </div>
-
-            <div id="dificulty_page" class="hidden">
-                <select name="" id="difficulty_page_select">
-                    <option value="">Select a difficulty</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <input type="button" value="Next!" id="difficulty_page_nextBtn">
-            </div>
-
-            <div id="question_page" class="hidden">
-                <h1 id="question">Question</h1>
-                <div id="answers"></div>
-                <div id="lifes">❤️❤️❤️</div>
-                <div id="countdown"></div>
-            </div>
-
-            <div id="gameover_page" class="hidden">
-                <h1>Game Over</h1>
-                <p id="player_score"></p>
-                <div id="ranking">
-                    <h2>Best Players</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Easy</td><td>Medium</td><td>Hard</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td id="rank0E"></td><td id="rank0M"></td><td id="rank0H"></td>
-                            </tr>
-                            <tr>
-                                <td id="rank1E"></td><td id="rank1M"></td><td id="rank1H"></td>
-                            </tr>
-                            <tr>
-                                <td id="rank2E"></td><td id="rank2M"></td><td id="rank2H"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <input type="button" id="btn_tryAgain" value="TRY AGAIN">
-            </div>
+            
         </div>
-        <!-- scripts -->
-        <script src="./src/js/main.js"></script>
-    </body>
+
+        <div id="category_page" class="hidden">
+            <div>
+                <input type="button" data-category="9" value="General Knowledge" class="category_page_selectBtn">
+                <input type="button" data-category="11" value="Film" class="category_page_selectBtn">
+                <input type="button" data-category="12" value="Music" class="category_page_selectBtn">
+                <input type="button" data-category="15" value="Video Games" class="category_page_selectBtn">
+                <input type="button" data-category="20" value="Mythology" class="category_page_selectBtn">
+                <input type="button" data-category="26" value="Celebrities" class="category_page_selectBtn">
+                <input type="button" data-category="27" value="Animals" class="category_page_selectBtn">
+                <input type="button" data-category="29" value="Comics" class="category_page_selectBtn">
+                <input type="button" data-category="" value="All" class="category_page_selectBtn">
+            </div>
+            <input type="button" value="Next!" id="category_page_nextBtn">
+        </div>
+
+        <div id="dificulty_page" class="hidden">
+            <select name="" id="difficulty_page_select">
+                <option value="">Select a difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <input type="button" value="Next!" id="difficulty_page_nextBtn">
+        </div>
+
+        <div id="question_page" class="hidden">
+            <h1 id="question">Question</h1>
+            <div id="answers"></div>
+            <div id="lifes">❤️❤️❤️</div>
+            <div id="countdown"></div>
+        </div>
+
+        <div id="gameover_page" class="hidden">
+            <h1>Game Over</h1>
+            <p id="player_score"></p>
+            <div id="ranking">
+                <h2>Best Players</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Easy</td>
+                            <td>Medium</td>
+                            <td>Hard</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="rank0E"></td>
+                            <td id="rank0M"></td>
+                            <td id="rank0H"></td>
+                        </tr>
+                        <tr>
+                            <td id="rank1E"></td>
+                            <td id="rank1M"></td>
+                            <td id="rank1H"></td>
+                        </tr>
+                        <tr>
+                            <td id="rank2E"></td>
+                            <td id="rank2M"></td>
+                            <td id="rank2H"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="button" id="btn_tryAgain" value="TRY AGAIN">
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="./src/js/main.js"></script>
+</body>
+
 </html>
