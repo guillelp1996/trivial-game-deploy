@@ -195,20 +195,24 @@ function printQuestion() {
 }
 
 function checkAnswer() {
+    let answer = event.target
+    if (event.target.tagName.toLowerCase() == "span") answer = $(event.target).parent();
     clearInterval(downloadTimer)
-    if ($(event.target).data("correct") == true) {
+    if ($(answer).data("correct") == true) {
+        $(answer).addClass("correct");
         score += 10;
     } else {
+        $(answer).addClass("incorrect");
         lifes--;
         checkGameOver();
     }
     if (!isGameOver) {
         if (questions.length > 0) {
             // Shows the next question
-            printQuestion();
+            setTimeout(printQuestion,1500);
         } else {
             // Makes a new request if player answered all the first 10 questions
-            requestAPI();
+            setTimeout(requestAPI,1500);
         }
     }
 }
@@ -220,7 +224,7 @@ function checkGameOver() {
         let user = { "name": $("#userName").val(), "score": score, "difficulty": difficulty };
         saveLocalStorage(user)
         showRanking();
-        changeScreen();
+        setTimeout(changeScreen,1500);
     }
 }
 
@@ -297,4 +301,5 @@ function resetGame() {
 
     // Resenting css classes to user input errors
     $(".border-error").removeClass("border-error");
+    $("#question_block").slideToggle();
 }

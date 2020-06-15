@@ -265,6 +265,14 @@ body {
     padding: 0 20px;
 }
 
+.correct, .correct:hover {
+    filter: hue-rotate(200deg) !important;
+}
+
+.incorrect, .incorrect:hover {
+    filter: hue-rotate(90deg) !important;
+}
+
 #lifes {
     float: right;
     font-size: 22px;
