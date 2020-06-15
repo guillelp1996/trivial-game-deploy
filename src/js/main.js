@@ -18,7 +18,7 @@ var UserObj = {
 
 $("#user_page_nextBtn").click(function(){
     if($("#userName").val() == "" || $("#userName").val().includes(" ")){
-        $("#userName").css("border","1px solid red");
+        $("#userName").css("border","3px solid red");
     }else{
         changeScreen();
     }
@@ -39,7 +39,7 @@ $(".category_page_selectBtn").click( () => {
 
 $("#difficulty_page_nextBtn").click( () => {
     if($("#difficulty_page_select").val() == "") {
-        $("#difficulty_page_select").css("border","1px solid red");
+        $("#difficulty_page_select").css("border","3px solid red");
     } else {
         requestAPI()
         changeScreen();
