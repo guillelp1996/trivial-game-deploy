@@ -207,3 +207,25 @@ body {
     margin: 16px 0;
     font-weight: bod;
 }
+
+/* select dificulty style */
+
+#dificulty_page >*{
+    display: block;
+    margin: 20px auto;
+}
+
+#dificulty_page select{
+    width: 200px;
+    height: 50px;
+    border-radius: 6px;
+    margin: 150px auto;
+    cursor: pointer;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 18px;
+    background-color: rgb(187, 119, 250);
+    border: 6px solid black;
+    color: whitesmoke;
+    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+    outline: none;
+}
