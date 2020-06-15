@@ -22,6 +22,7 @@ body {
     border: 1px solid white;
     padding: 40px;
     border-radius: 9px;
+    box-shadow: rgba(129, 15, 182, 0.349) -2px 2px 0px 2px;
 }
 
 .main_container img {
@@ -88,6 +89,15 @@ body {
     outline: none;
 }
 
+#category_page input[data-category="9"] {
+    background-image: url("../img/general.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
 #category_page input[data-category="11"] {
     background-image: url("../img/film.png");
     background-repeat: no-repeat;
@@ -99,6 +109,24 @@ body {
 
 #category_page input[data-category="12"] {
     background-image: url("../img/music.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="15"] {
+    background-image: url("../img/game.png");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: left center;
+    background-color: rgb(129, 129, 248);
+    box-shadow:  rgb(67, 67, 185) -3px 3px 0px 0px;
+}
+
+#category_page input[data-category="20"] {
+    background-image: url("../img/mythology.png");
     background-repeat: no-repeat;
     background-size: 45px;
     background-position: left center;
