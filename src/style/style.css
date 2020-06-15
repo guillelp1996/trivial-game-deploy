@@ -8,6 +8,7 @@
 body {
     background-color: rgb(149, 35, 255);
     background-image: url("../img/bg-pattern.jpg");
+    min-width: 900px ;
 }
 
 .hidden {
@@ -63,7 +64,7 @@ body {
     outline: none;
 }
 
-.nextBtn {
+.nextBtn, #dificulty_page select{
     width: 200px;
     height: 50px;
     border-radius: 6px;
@@ -215,18 +216,6 @@ body {
     display: block;
     margin: 20px auto;
 }
-
 #dificulty_page select{
-    width: 200px;
-    height: 50px;
-    border-radius: 6px;
-    margin: 150px auto;
-    cursor: pointer;
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 18px;
-    background-color: rgb(187, 119, 250);
-    border: 6px solid black;
-    color: whitesmoke;
-    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
-    outline: none;
+    margin: 100px auto;
 }
