@@ -21,8 +21,9 @@ body {
     background-color: white;
     border: 1px solid white;
     padding: 40px;
-    border-radius: 9px;
-    box-shadow: rgba(129, 15, 182, 0.349) -2px 2px 0px 2px;
+    border-radius: 6px;
+    border: 6px solid black;
+    box-shadow:  rgb(5, 5, 5) -3px 6px 2px 2px;
 }
 
 .main_container img {
@@ -43,9 +44,10 @@ body {
     width: 300px;
     text-align: center;
     padding: 10px;
-    font-size: 50px;
+    font-size: 44px;
     border-radius: 15px ;
-    border: 3px solid rgb(194, 194, 194);
+    border: 6px solid black;
+    box-shadow:  rgb(5, 5, 5) -3px 3px 0px 0px;
     background-color: rgb(163, 99, 223);
     color: whitesmoke;
     outline: none;
@@ -57,19 +59,27 @@ body {
 
 #user_page > input[type=text]:focus{
     border-radius: 15px ;
-    border: 3px solid rgb(194, 194, 194);
     outline: none;
 }
 
-#user_page > input[type=button] {
+.nextBtn {
     width: 200px;
     height: 50px;
-    margin: 30px auto;
-    border-radius: 10px;
+    border-radius: 6px;
+    margin-top: 50px;
     cursor: pointer;
-    border: 1px solid rgb(204, 204, 204);
-    background-color: indigo;
-    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 18px;
+    background-color: rgb(168, 79, 252);
+    border: 6px solid black;
+    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+}
+
+.nextBtn:hover {
+    color: whitesmoke;
+    background-color: rgb(132, 0, 255);
+    box-shadow: rgb(132, 0, 255);
+    transition: 200ms;
 }
 
 #category_page {
@@ -178,26 +188,7 @@ body {
     background-color: rgb(158, 158, 158);
 }
 
-#category_page_nextBtn {
-    width: 120px;
-    height: 50px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 18px;
-    background-color: rgb(168, 79, 252);
-    border: 6px solid black;
-    box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
-}
-
-#category_page_nextBtn:hover {
-    color: whitesmoke;
-    background-color: rgb(132, 0, 255);
-    box-shadow: rgb(132, 0, 255);
-    transition: 200ms;
-}
-
 .category-selected {
-    box-shadow:  rgb(132, 0, 255) -3px 3px 0px 0px !important;
+    box-shadow:  rgb(132, 0, 255) -4px 4px 0px 0px !important;
     animation:icon-move 1000ms infinite;
 }
