@@ -45,6 +45,7 @@ body {
     text-align: center;
     padding: 10px;
     font-size: 44px;
+    color: whitesmoke;
     border-radius: 15px ;
     border: 6px solid black;
     box-shadow:  rgb(5, 5, 5) -3px 3px 0px 0px;
@@ -198,4 +199,11 @@ body {
 .border-error {
     border: 6px solid red !important;
     box-shadow:  red -3px 3px 0px 0px !important;
+}
+
+.error-msg {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    margin: 16px 0;
+    font-weight: bod;
 }
