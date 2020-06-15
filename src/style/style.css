@@ -17,7 +17,8 @@ body {
 
 .main_container {
     width: 50%;
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     margin: 5% auto 0 auto;
     background-color: white;
     border: 1px solid white;
@@ -68,7 +69,7 @@ body {
     width: 200px;
     height: 50px;
     border-radius: 6px;
-    margin-top: 50px;
+    margin-top: 40px;
     cursor: pointer;
     font-family: 'Balsamiq Sans', cursive;
     font-size: 18px;
@@ -87,15 +88,25 @@ body {
 }
 
 #category_page {
-    margin-top: 10%;
+    margin-top: 8%;
     text-align: center;
+}
+
+.category_container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+
 }
 
 #category_page input[data-category] {
     font-family: 'Balsamiq Sans', cursive;
     width: 200px;
     height: 45px;
-    margin-right: 5%;
+    margin-right: 0%;
     margin-bottom: 3%;
     border: none;
     border-radius: 6px;
@@ -320,7 +331,7 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     width: 100%;
-    margin: 50px auto;
+    margin: 20px auto 0 auto;
 }
 table td, table th {
     border: 1px solid #ddd;
