@@ -49,7 +49,6 @@ body {
     border: 6px solid black;
     box-shadow:  rgb(5, 5, 5) -3px 3px 0px 0px;
     background-color: rgb(163, 99, 223);
-    color: whitesmoke;
     outline: none;
 }
 
@@ -72,7 +71,9 @@ body {
     font-size: 18px;
     background-color: rgb(168, 79, 252);
     border: 6px solid black;
+    color: whitesmoke;
     box-shadow:  rgb(37, 37, 37) -3px 3px 0px 0px;
+    outline: none;
 }
 
 .nextBtn:hover {
@@ -83,6 +84,7 @@ body {
 }
 
 #category_page {
+    margin-top: 10%;
     text-align: center;
 }
 
@@ -191,4 +193,9 @@ body {
 .category-selected {
     box-shadow:  rgb(132, 0, 255) -4px 4px 0px 0px !important;
     animation:icon-move 1000ms infinite;
+}
+
+.border-error {
+    border: 6px solid red !important;
+    box-shadow:  red -3px 3px 0px 0px !important;
 }

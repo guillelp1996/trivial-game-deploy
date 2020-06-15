@@ -18,7 +18,7 @@ var UserObj = {
 
 $("#user_page_nextBtn").click(function () {
     if ($("#userName").val() == "" || $("#userName").val().includes(" ")) {
-        $("#userName").css("border", "3px solid red");
+        $("#userName").addClass("border-error");
     } else {
         changeScreen();
     }
@@ -42,7 +42,7 @@ $(".category_page_selectBtn").click(() => {
 
 $("#difficulty_page_nextBtn").click(() => {
     if ($("#difficulty_page_select").val() == "") {
-        $("#difficulty_page_select").css("border", "3px solid red");
+        $("#difficulty_page_select").addClass("border-error");
     } else {
         requestAPI()
         changeScreen();
@@ -283,4 +283,7 @@ function resetGame() {
     score = 0;
     lifes = 3;
     isGameOver = false
+
+    // Resenting css classes to user input errors
+    $(".border-error").removeClass("border-error");
 }
